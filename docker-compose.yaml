@@ -1,0 +1,17 @@
+version: '3'
+services:
+  app-service:
+    build: ./FlaskMicroservice1
+    volumes:
+      - ./FlaskMicroservice1:/usr/src/app
+    ports:
+      - '5001:5001'
+
+
+  website:
+    build: ./FlaskMicroservice2
+    volumes:
+      - ./FlaskMicroservice2:/usr/src/app
+
+    ports:
+      - "5002:5002"
